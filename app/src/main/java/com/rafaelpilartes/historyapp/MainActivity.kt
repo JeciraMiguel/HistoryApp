@@ -77,8 +77,10 @@ class MainActivity : AppCompatActivity() {
             if (ageText != null && ageText in 20..100) {
                 val famousPerson = findFamousPerson(ageText)
                 textViewResult.text = famousPerson ?: "No matches."
+                Log.d("FindFamousPerson", famousPerson ?: "No matches.") // Log
             } else {
                 textViewResult.text = "The age is invalid or out of range (20-100)."
+                Log.d("FindFamousPerson", "The age is invalid or out of range (20-100).") // Log
             }
         }
 
