@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="background_color">#755745</color>
+    <color name="button_color">#4C3C2F</color>
+    <color name="info_area_color">#A9AAAC</color>
+
+    <color name="border_left_color">#FF0000</color>
+    <color name="border_right_color">#00FF00</color>
+    <color name="border_top_color">#0000FF</color>
+    <color name="border_bottom_color">#FFFF00</color>
+
+</resources>
