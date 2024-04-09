@@ -9,6 +9,7 @@ import android.widget.EditText
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
+    // Array of famous people
     private val famousPeople = mapOf(
         "Nelson Mandela" to Pair(95, "South African anti-apartheid revolutionary."),
         "William Shakespeare" to Pair(52, "Renowned English playwright and poet."),
@@ -61,7 +62,6 @@ class MainActivity : AppCompatActivity() {
         "Homer" to Pair(20, "Legendary Greek author of the epic poems the 'Iliad' and the 'Odyssey'.")
     )
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -70,34 +70,45 @@ class MainActivity : AppCompatActivity() {
         val editTextAge = findViewById<EditText>(R.id.editTextAge)
         val buttonFind = findViewById<Button>(R.id.buttonFind)
         val buttonClear = findViewById<Button>(R.id.buttonClear)
-        val textViewResult = findViewById<TextView>(R.id.textViewResult) // Declaração correta do textViewResult
+        val textViewResult = findViewById<TextView>(R.id.textViewResult) // Correct declaration of textViewResult
 
+        // OnClickListener for the "Find" button
         buttonFind.setOnClickListener {
             val ageText = editTextAge.text.toString().toIntOrNull()
             if (ageText != null && ageText in 20..100) {
                 val famousPerson = findFamousPerson(ageText)
+                // Set the result text view with the result or "No matches" if no match is found
                 textViewResult.text = famousPerson ?: "No matches."
-                Log.d("FindFamousPerson", famousPerson ?: "No matches.") // Log
+                // Log the result
+                Log.d("FindFamousPerson", famousPerson ?: "No matches.")
             } else {
+                // Set the result text view with an error message
                 textViewResult.text = "The age is invalid or out of range (20-100)."
-                Log.d("FindFamousPerson", "The age is invalid or out of range (20-100).") // Log
+                // Log the error message
+                Log.d("FindFamousPerson", "The age is invalid or out of range (20-100).")
             }
         }
 
+        // OnClickListener for the "Clear" button
         buttonClear.setOnClickListener {
+            // Clear the age edit text
             editTextAge.text.clear()
+            // Clear the result text view
             textViewResult.text = ""
         }
     }
 
+    // Function to find a famous person with the same age
     private fun findFamousPerson(age: Int): String? {
         for ((famousName, pair) in famousPeople) {
             val deathAge = pair.first
             val famousOccupation = pair.second
             if (age == deathAge) {
+                // Return a formatted string if a match is found
                 return "You are $age years old, which is the same age as $famousName. $famousName was a $famousOccupation."
             }
         }
+        // Return null if no match is found
         return null
     }
 }

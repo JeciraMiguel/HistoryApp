@@ -12,7 +12,7 @@
 
 ### 🌐YouTube link
 
-[Go to the youtube "History App - video"](https://youtube.com/)
+[Go to the youtube "History App - video"](https://www.youtube.com/watch?v=k-NKGtJs0s0/)
 
 ## Description
 
