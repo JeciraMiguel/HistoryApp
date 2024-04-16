@@ -39,7 +39,7 @@ The application was developed in Kotlin and uses Android Studio as a development
 
 ## Author
 
-- Jecira Maria Vandest Varela Miguel - Developer
+- Jecira Miguel - Developer
 - Student number - ST10450462
 
 ## License
